@@ -1,6 +1,7 @@
 body {
   background-color: limegreen;
   font-family: 'Nunito', sans-serif;
+  text-align: center;
 }
 a {
   color: black;
@@ -11,10 +12,16 @@ p {
 }
 hr {
   background-color:#000000;
-  color:#000000;
   border-color: transparent;
   margin-top: 0px;
   margin-bottom: 0px;
+}
+img {
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+user-select: none;
 }
 footer {
   margin-top: 0px
