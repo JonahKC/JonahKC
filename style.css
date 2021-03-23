@@ -23,9 +23,9 @@ img {
 -o-user-select: none;
 user-select: none;
 }
-footer {
-  margin-top: 0px
-}
 h1 {
   text-decoration: none;
+}
+.center {
+  text-align: center;
 }
