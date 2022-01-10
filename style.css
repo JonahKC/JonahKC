@@ -43,6 +43,33 @@ footer {
   text-align: center;
   font-size: .75rem;
 }
+/* ■ ■ Forms ■ ■ */
+/* Text input */
+input[type=text], input[type=email], input[type=color], input[type=date], input[type=date], input[type=datetime-local], input[type=file], input[type=month], input[type=number], input[type=password], input[type=radio], input[type=range], input[type=search], input[type=tel], input[type=time], input[type=url], input[type=week], input[type=time] {
+  border: 3px solid var(--primary);
+  background-color: var(--secondary);
+  color: var(--text);
+  border-radius: 4px;
+  outline: none;
+}
+input[type=text]::placeholder, input[type=email]::placeholder, input[type=color]::placeholder, input[type=date]::placeholder, input[type=date]::placeholder, input[type=datetime-local]::placeholder, input[type=file]::placeholder, input[type=month]::placeholder, input[type=number]::placeholder, input[type=password]::placeholder, input[type=radio]::placeholder, input[type=range]::placeholder, input[type=search]::placeholder, input[type=tel]::placeholder, input[type=time]::placeholder, input[type=url]::placeholder, input[type=week]::placeholder, input[type=time]::placeholder {
+  color: var(--text);
+  outline: none;
+}
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+/* Submit button inputs */
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: var(--secondary);
+  border: 3px solid var(--primary);
+  border-radius: 4px;
+  color: var(--text);
+  padding: 5px 15px;
+  text-decoration: none;
+  margin: 4px 2px;
+  outline: none;
+}
 /* ■ ■ Fancy Classes ■ ■ */
 /* Centers content */
 .center {
