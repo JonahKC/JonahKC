@@ -200,3 +200,10 @@ input[type=button], input[type=submit], input[type=reset] {
   66% { color: blue; }
   100% { color: red; }
 }
+
+/* Accessability */
+
+:focus {
+  outline: 1px solid black;
+  padding: 5px 5px 5px 5px;
+}
