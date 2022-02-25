@@ -203,7 +203,7 @@ input[type=button], input[type=submit], input[type=reset] {
 
 /* Accessability */
 
-:focus {
+:focus-visible {
   outline: 1px solid black;
   padding: 5px 5px 5px 5px;
 }
