@@ -4,7 +4,7 @@
 /* ■ ■ Variables ■ ■ */
 :root {
   --primary: #4f7a28;
-  --secondary: #8eed9e;
+  --secondary: #63ca71;
   --background: #57bd65;
   --text: #000000;
 	--invertedtext: #ffffff;
@@ -74,6 +74,11 @@ input[type=button], input[type=submit], input[type=reset] {
 /* Centers content */
 .center {
   text-align: center;
+}
+/* Removes all text decoration */
+.nodeco {
+  text-decoration: none !important;
+  list-style: none;
 }
 /* Vertically and horizontally centers content, flexing left to right */
 .vertcenter-side {
@@ -151,6 +156,55 @@ input[type=button], input[type=submit], input[type=reset] {
   0% {opacity:0;}
   100% {opacity:1;}
 }
+/* ■ ■ Columns ■ ■ */
+
+/* All .column-# go inside .row */
+.row {
+  display:flex;
+  flex-direction: row;
+}
+/* Clears floats after .topbar */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Two columns */
+.column-2 {
+  display: flex;
+  border-radius: 5px;
+  float: left;
+  width: 45%;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  margin: 0 2.5% 0 2.5%;
+  flex-direction: column;
+  align-items: center;
+
+  -webkit-transition: background-color 1s ease-out;
+  -moz-transition: background-color 1s ease-out;
+  -o-transition: background-color 1s ease-out;
+  transition: background-color 1s ease-out;
+}
+.column-2:hover {
+  background-color: var(--secondary);
+}
+/*  ■ ■ Responsive Columns ■ ■ */
+@media screen and (max-width: 800px) {
+  .row {
+    display: block !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  .column-2 {
+    margin-top: 50px;
+    width: 98%;
+    padding: 0px 0;
+    display: block !important;
+    height: auto;
+    
+  }
+}
 /* CUSTOM CSS (very fancy) */
 .biomargins {
 	margin-left: 8%;
@@ -160,6 +214,7 @@ input[type=button], input[type=submit], input[type=reset] {
   margin-left: 10px;
   margin-right: 10px;
   transition: all .2s ease-in-out;
+  filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(38deg) brightness(99%) contrast(104%);
 }
 .fancyicons:hover {
   transform: scale(1.1);
