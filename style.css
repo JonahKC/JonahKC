@@ -271,3 +271,31 @@ input[type=button], input[type=submit], input[type=reset] {
   outline: 1px solid black;
   padding: 5px 5px 5px 5px;
 }
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: var(--text) !important;
+    color: var(--background) !important;
+  }
+  .svgchange {
+    filter: invert(65%) sepia(53%) saturate(462%) hue-rotate(77deg) brightness(91%) contrast(84%);
+  }
+  .darkmodebg {
+    background: rgb(87, 189, 101);
+    border-radius:5px;
+  }
+  a {
+    color: var(--background) !important;
+  }
+  .fancylink {
+    color: var(--background);
+    border-bottom: 1px solid var(--background);
+  }
+  .fancylink:after {
+    background: var(--background);
+  }
+  .fancylink:hover {
+    color: var(--text);
+  }
+}
