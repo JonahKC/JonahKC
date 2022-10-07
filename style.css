@@ -1,33 +1,22 @@
-/* ■ ■ JonahStrap v1.3.3 - css.jonahkc.com ■ ■ */
-/* ■ ■ Font ■ ■ */
+/* Setup */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
-/* ■ ■ Variables ■ ■ */
-:root {
-  --primary: #000000;
-  --secondary: #63ca71;
-  --background: #57bd65;
-  --text: #000000;
-	--invertedtext: #ffffff;
-  --mainfont: 'Nunito', sans-serif;
-  --altfont: 'Nunito', sans-serif;
-}
-/* ■ ■ Tag CSS ■ ■ */
-/* Font, margins, background and text color */
+
 html {
-  font-family: var(--mainfont);
-  background-color: var(--background);
-  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  background-color: #57bd65;
+  color: #000000;
 }
-/* Adds fancy line height */
+body {
+  animation: fadeIn linear 2s;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
 p {
+  font-size: 18px;
   line-height: 2;
 }
-/* Underlines and makes links the same color as normal text */
-a {
-  text-decoration: underline;
-  color: var(--text);
-}
-/* Makes images undraggable and unselectable */
 img {
   user-drag: none; 
   user-select: none;
@@ -36,194 +25,15 @@ img {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
-/* Adds wider margins, centers and shrinks text */
-footer {
-  margin-bottom: 10px;
-  margin-top: 30px;
-  text-align: center;
-  font-size: .75rem;
-}
-/* ■ ■ Forms ■ ■ */
-/* Text input */
-input[type=text], input[type=email], input[type=color], input[type=date], input[type=date], input[type=datetime-local], input[type=file], input[type=month], input[type=number], input[type=password], input[type=radio], input[type=range], input[type=search], input[type=tel], input[type=time], input[type=url], input[type=week], input[type=time] {
-  border: 3px solid var(--primary);
-  background-color: var(--secondary);
-  color: var(--text);
-  border-radius: 4px;
-  outline: none;
-}
-input[type=text]::placeholder, input[type=email]::placeholder, input[type=color]::placeholder, input[type=date]::placeholder, input[type=date]::placeholder, input[type=datetime-local]::placeholder, input[type=file]::placeholder, input[type=month]::placeholder, input[type=number]::placeholder, input[type=password]::placeholder, input[type=radio]::placeholder, input[type=range]::placeholder, input[type=search]::placeholder, input[type=tel]::placeholder, input[type=time]::placeholder, input[type=url]::placeholder, input[type=week]::placeholder, input[type=time]::placeholder {
-  color: var(--text);
-  outline: none;
-}
-input:focus, textarea:focus, select:focus{
-  outline: none;
-}
-/* Submit button inputs */
-input[type=button], input[type=submit], input[type=reset] {
-  background-color: var(--secondary);
-  border: 3px solid var(--primary);
-  border-radius: 4px;
-  color: var(--text);
-  padding: 5px 15px;
-  text-decoration: none;
-  margin: 4px 2px;
-  outline: none;
-}
-/* ■ ■ Fancy Classes ■ ■ */
-/* Centers content */
-.center {
-  text-align: center;
-}
-/* Removes all text decoration */
-.nodeco {
-  text-decoration: none !important;
-  list-style: none;
-}
-/* Vertically and horizontally centers content, flexing left to right */
-.vertcenter-side {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/* Makes clear hr element */
-.space {
-  background-color: transparent;
-  border-color: transparent;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  width: 100%;
-  height: 1rem;
-}
-/* Makes a fancy hr element line 75% of the screen width */
-.midline {
-  background-color: var(--primary);
-  border-color: transparent;
-  border-radius: 4px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  width: 50%;
-  height: 2px;
-}
-/* Makes a fancy hr element line 75% of the screen width */
-.smallline {
-  background-color: var(--primary);
-  border-color: transparent;
-  border-radius: 4px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  width: 33%;
-  height: 2px;
-}
-/* Makes text 3x size */
-.title {
-  text-decoration: none;
-  font-size: 3rem;
-  font-family: var(--altfont);
-}
-/* Makes text 2x size */
-.subtitle {
-  text-decoration: none;
-  font-size: 2rem;
-  font-family: var(--altfont);
-}
-/* Make text fade in after 2 seconds */
-.fade-in-2 {
-  animation: fadeIn linear 2s;
-  -webkit-animation: fadeIn linear 2s;
-  -moz-animation: fadeIn linear 2s;
-  -o-animation: fadeIn linear 2s;
-  -ms-animation: fadeIn linear 2s;
-}
-/* Technical fade-y stuff */
-@keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-@-moz-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-@-webkit-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-@-o-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-@-ms-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-/* ■ ■ Columns ■ ■ */
-
-/* All .column-# go inside .row */
-.row {
-  display:flex;
-  flex-direction: row;
-}
-/* Clears floats after .topbar */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* Two columns */
-.column-2 {
-  display: flex;
-  border-radius: 5px;
-  float: left;
-  width: 45%;
-  text-align: center;
-  padding: 10px 10px 10px 10px;
-  margin: 0 2.5% 0 2.5%;
-  flex-direction: column;
-  align-items: center;
-
-  -webkit-transition: background-color 1s ease-out;
-  -moz-transition: background-color 1s ease-out;
-  -o-transition: background-color 1s ease-out;
-  transition: background-color 1s ease-out;
-}
-.column-2:hover {
-  background-color: var(--secondary);
-}
-/*  ■ ■ Responsive Columns ■ ■ */
-@media screen and (max-width: 800px) {
-  .row {
-    display: block !important;
-    flex-direction: column;
-    align-items: center;
-  }
-  .column-2 {
-    margin-top: 50px;
-    width: 98%;
-    padding: 0px 0;
-    display: block !important;
-    height: auto;
-    
-  }
-}
-/* CUSTOM CSS (very fancy) */
-.biomargins {
-	margin-left: 8%;
-	margin-right: 8%;
-}
-.fancyicons {
-  margin-left: 10px;
-  margin-right: 10px;
-  transition: all .2s ease-in-out;
-  filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(38deg) brightness(99%) contrast(104%);
-}
-.fancyicons:hover {
-  transform: scale(1.1);
+a {
+  text-decoration: underline;
+  color: #000000;
 }
 .fancylink {
   position: relative;
   z-index: 1;
-  color: var(--text);
-  border-bottom: 1px solid var(--text);
+  color: #000000;
+  border-bottom: 1px solid #000000;
   transition: color 0.3s;
   text-decoration: none;
 	margin-bottom: -20px;
@@ -238,7 +48,7 @@ input[type=button], input[type=submit], input[type=reset] {
   height: 100%;
   transform: scaleY(0);
   transform-origin: bottom center;
-  background: var(--text);
+  background: #000000;
   z-index: -1;
   transition: transform 0.3s;
 }
@@ -246,27 +56,87 @@ input[type=button], input[type=submit], input[type=reset] {
   transform: scaleY(1);
 }
 .fancylink:hover {
-  color: var(--invertedtext);
+  color: #ffffff;
   cursor: pointer;
 }
-.heytext {
-  animation: color-change 10s infinite;
-  font-size: 15rem;
+/* Placement */
+.flex {
+  display: flex;
 }
-@keyframes color-change {
-  0% { color: red; }
-  33% { color: yellow; }
-  66% { color: blue; }
-  100% { color: red; }
+.up {
+  flex-direction: column;
 }
-::selection {
-  background: rgba(142, 237, 158, .7); /* WebKit/Blink Browsers */
+.wrap {
+  flex-wrap: wrap;
 }
-::-moz-selection {
-  background: rgba(142, 237, 158, .7); /* Gecko Browsers */
+.inner {
+  padding:10px;
 }
-/* Accessability */
+.center {
+  justify-content:center;
+  align-items:center;
+}
+.textcenter {
+  text-align:center;
+}
+.padding {
+  padding: 0 150px 0 150px;
+}
 
+/* Random styles and stuff */
+.biobox {
+  width:75vw;
+  max-width:800px;
+  padding:20px;
+  border: black solid 3px;
+  border-radius: 15px;
+  background: #56c774;
+}
+.projbox {
+  width:75vw;
+  max-width:400px;
+  min-height:300px;
+  padding:20px;
+  margin:10px;
+  border: black solid 3px;
+  border-radius: 15px;
+  background: #56c774;
+  transition: 0.5s;
+  text-decoration: none;
+}
+.projbox:hover {
+  transform: translate(-10px, -10px);
+}
+.wave {
+  margin-left:10px;
+  animation: wave 2s linear alternate infinite;
+    -webkit-animation: wave 2s linear alternate infinite;
+}
+@keyframes wave {
+    0% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  .flex {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .section {
+    padding: 40px;
+  }
+  .padding {
+    padding: 40px;
+  }
+}
+
+/* Accessability */
 :focus-visible {
   outline: 1px solid black;
   padding: 5px 5px 5px 5px;
