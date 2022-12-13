@@ -138,6 +138,6 @@ a {
 
 /* Accessability */
 :focus-visible {
-  outline: 1px solid black;
-  padding: 5px 5px 5px 5px;
+  outline: 2px solid black;
+  border-radius: 5px;
 }
