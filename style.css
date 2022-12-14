@@ -141,3 +141,10 @@ a {
   outline: 2px solid black;
   border-radius: 5px;
 }
+/* Highlighting */
+::selection {
+  background: rgba(125, 255, 150,.5);
+}
+::-moz-selection {
+  background: rgba(125, 255, 150,.5);
+}
