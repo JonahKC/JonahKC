@@ -1,8 +1,7 @@
-/* Setup */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
-
+/* Basic stuff */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 html {
-  font-family: 'Nunito', sans-serif;
+font-family: 'Poppins', sans-serif;
   background-color: #57bd65;
   color: #000000;
 }
@@ -37,8 +36,6 @@ a {
     border-bottom: 1px solid #000000;
     transition: color 0.3s;
     text-decoration: none;
-  	margin-bottom: -20px;
-  	padding-bottom: -20px;
   }
   .fancylink:after {
     content: "";
@@ -61,6 +58,7 @@ a {
     cursor: pointer;
   }
 }
+/* Inputs */
 input {
   margin: 5px;
   border:3px black solid;
@@ -88,9 +86,6 @@ input[type="button"]:hover, input[type="submit"]:hover {
 .wrap {
   flex-wrap: wrap;
 }
-.inner {
-  padding:10px;
-}
 .center {
   justify-content:center;
   align-items:center;
@@ -98,10 +93,6 @@ input[type="button"]:hover, input[type="submit"]:hover {
 .textcenter {
   text-align:center;
 }
-.padding {
-  padding: 0 150px 0 150px;
-}
-
 /* Random styles and stuff */
 .biobox {
   width:75vw;
@@ -125,6 +116,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
 }
 .projbox:hover {
   transform: translate(-10px, -10px);
+  box-shadow: 10px 10px 0px 0px black;
 }
 .wave {
   margin-left:10px;
@@ -139,7 +131,6 @@ input[type="button"]:hover, input[type="submit"]:hover {
         transform: rotate(10deg);
     }
 }
-
 /* Mobile */
 @media screen and (max-width: 700px) {
   .flex {
@@ -147,14 +138,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
     align-items: center;
     flex-wrap: wrap;
   }
-  .section {
-    padding: 40px;
-  }
-  .padding {
-    padding: 40px;
-  }
 }
-
 /* Accessability */
 :focus-visible {
   outline: 2px solid black;
