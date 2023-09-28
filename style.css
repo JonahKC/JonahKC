@@ -28,6 +28,9 @@ a {
   text-decoration: underline;
   color: #000000;
 }
+a:hover {
+  text-decoration: none;
+}
 @supports (display:flex) and (transform: scaleY(1)) {
   .fancylink {
     position: relative;
