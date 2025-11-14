@@ -7,6 +7,9 @@
     text-decoration: underline;
     color: #0000EE;
   }
+  .italic {
+    font-style: italic;
+  }
   .bioContainer {
     display: flex;
   }
