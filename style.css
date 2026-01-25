@@ -159,6 +159,15 @@ input[type="button"]:hover, input[type="submit"]:hover {
   outline: 2px solid #fff8ed;
   transition:0s;
 }
+@media (prefers-reduced-motion: reduce) {
+  body {
+    opacity: 1;
+    animation: none;
+  }
+  .wave {
+    animation: none;
+  }
+}
 /* Highlighting */
 ::selection {
   background: rgba(255, 248, 237,.2);
