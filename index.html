@@ -38,18 +38,14 @@
   </head>
   
   <body class="flex center">
+    <main>
     <div class="bioContainer flex">
       <!-- The image side -->
       <div class="bioImage">
-        <picture> <!-- ty chatgpt for this lmao -->
-          <!-- Small screens (non-retina phones & tablets) -->
-          <source srcset="/images/portrait-small.webp" media="(max-width: 800px) and (max-resolution: 1.9x)">
-          <!-- Retina small screens (phones/tablets under 800px) and all non-retina screens -->
-          <source srcset="/images/portrait.webp" media="(max-width: 800px) and (min-resolution: 2x), (min-width: 801px) and (max-resolution: 1.9x)">
-          <!-- Retina screens above 800px (MacBooks, high-res laptops, iMacs, etc.) -->
-          <source srcset="/images/portrait-large.webp" media="(min-width: 801px) and (min-resolution: 2x)">
-          <!-- Default fallback (in case none of the conditions match) -->
-          <img src="/images/portrait.webp" alt="Jonah Kessler-Cohen nonchalantly waiting for the subway.">
+        <picture> <!-- Thank you Claude for this -->
+          <source srcset="/images/portrait-small.webp 1x, /images/portrait.webp 2x" media="(max-width: 800px)">
+          <source srcset="/images/portrait.webp 1x, /images/portrait-large.webp 2x" media="(min-width: 801px)">
+          <img src="/images/portrait.webp" width="720" height="1080" fetchpriority="high" alt="Jonah Kessler-Cohen nonchalantly waiting for the subway.">
         </picture>
         <p class="italic">Jonah Kessler-Cohen nonchalantly waiting for the subway.</p>
       </div>
@@ -72,5 +68,6 @@
       </div>
       
     </div>
+    </main>
   </body>
 </html>
