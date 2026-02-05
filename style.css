@@ -31,19 +31,19 @@ a {
   color: #fff8ed;
   text-decoration: none;
   transition: 0.2s;
-  border-bottom: 2px solid #fff8ed;
+  border-bottom: 1.5px solid #fff8ed;
 }
 a:hover {
   cursor: pointer;
-  box-shadow: 0px 3px 0px 0px #fff8ed;
+  box-shadow: 0px 1.5px 0px 0px #fff8ed;
 }
 /* Inputs */
 input {
   margin: 5px;
-  border:3px #fff8ed solid;
+  border:1.5px #fff8ed solid;
   border-radius: 15px!important;
   padding:8px;
-  background:#56c774;
+  background:#507D5A;
   color:#fff8ed;
 }
 input::placeholder {
@@ -54,10 +54,10 @@ input[type="button"], input[type="submit"] {
   cursor: pointer;
 }
 input[type="button"]:hover, input[type="submit"]:hover {
-  transform: scale(1.1);
+  box-shadow: 0 0 0 1.5px #fff8ed;
 }
 input[type="button"]:active, input[type="submit"]:active {
-  transform: scale(1);
+  box-shadow: 0 0 0 0px #fff8ed;
 }
 /* Placement */
 .flex {
