@@ -51,9 +51,13 @@ input::placeholder {
 }
 input[type="button"], input[type="submit"] {
   transition: all .2s ease-in-out;
+  cursor: pointer;
 }
 input[type="button"]:hover, input[type="submit"]:hover {
   transform: scale(1.1);
+}
+input[type="button"]:active, input[type="submit"]:active {
+  transform: scale(1);
 }
 /* Placement */
 .flex {
@@ -163,6 +167,9 @@ input[type="button"]:hover, input[type="submit"]:hover {
   body {
     opacity: 1;
     animation: none;
+  }
+  a, input[type="button"], input[type="submit"] {
+    transition: 0s;
   }
   .wave {
     animation: none;
