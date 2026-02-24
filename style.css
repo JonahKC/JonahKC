@@ -161,7 +161,7 @@ input[type="button"]:active, input[type="submit"]:active {
 /* Accessibility */
 :focus-visible {
   outline: 2px solid #fff8ed;
-  transition:0s;
+  transition: 0s;
 }
 @media (prefers-reduced-motion: reduce) {
   body {
