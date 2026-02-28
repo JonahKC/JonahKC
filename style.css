@@ -108,25 +108,7 @@ input[type="button"]:active, input[type="submit"]:active {
   line-height:1;
   margin:0;
 }
-.wave {
-  display: inline-block;
-  font-size: 3.1rem;
-  line-height: 1;
 
-  animation: wave 2s linear alternate infinite;
-    -webkit-animation: wave 2s linear alternate infinite;
-}
-@keyframes wave {
-    0% {
-        transform: rotate(-10deg);
-    }
-    100% {
-        transform: rotate(10deg);
-    }
-}
-.moreJonah h2 {
-  margin: 0.67em 0 0 0;
-}
 .printDisclaimer {
   display: none;
 }
@@ -145,7 +127,7 @@ input[type="button"]:active, input[type="submit"]:active {
   }
   .bioImage p {
     display: none;
-}
+  }
   .bioText {
     width: 100%;
     height: auto;
@@ -153,11 +135,7 @@ input[type="button"]:active, input[type="submit"]:active {
     box-sizing: border-box;
   }
   .hey {
-    font-size: 2.3rem;
-
-  }
-  .wave {
-    font-size: 2.4rem;
+    font-size: 40px;
   }
   .flex {
     justify-content: center;
@@ -177,9 +155,6 @@ input[type="button"]:active, input[type="submit"]:active {
   }
   a, input[type="button"], input[type="submit"] {
     transition: 0s;
-  }
-  .wave {
-    animation: none;
   }
 }
 /* Highlighting */
