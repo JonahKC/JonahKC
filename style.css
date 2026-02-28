@@ -108,6 +108,9 @@ input[type="button"]:active, input[type="submit"]:active {
   line-height:1;
   margin:0;
 }
+.printDisclaimer {
+  display: none;
+}
 /* Mobile */
 @media screen and (max-width: 800px) {
   .bioContainer {

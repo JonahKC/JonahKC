@@ -34,9 +34,7 @@ a {
   font-style: italic;
   width: 30vh;
 }
-body::after {
-  content: "This page was printed using a lower-carbon-footprint font designed to reduce the amount of ink used in printing.";
-  font-family: 'Apfel Grotezk Brukt', 'Apfel Grotezk', sans-serif;
+.printDisclaimer {
+  display: block;
   font-style: italic;
-  position: fixed;
-  bottom: 0;
+}
