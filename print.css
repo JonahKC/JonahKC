@@ -1,28 +1,42 @@
-@media print {
-  html {
-  font-family: 'Poppins', sans-serif;
+@font-face {font-family: 'Apfel Grotezk';src: url('/fonts/ApfelGrotezk-Regular.woff2') format('woff2');font-weight: 400;font-style: normal;}
+@font-face {font-family: 'Apfel Grotezk';src: url('/fonts/ApfelGrotezk-Mittel.woff2') format('woff2');font-weight: 600;font-style: normal;}
+@font-face {font-family: 'Apfel Grotezk';src: url('/fonts/ApfelGrotezk-Fett.woff2') format('woff2');font-weight: 700;font-style: normal;}
+@font-face {font-family: 'Apfel Grotezk';src: url('/fonts/ApfelGrotezk-Satt.woff2') format('woff2');font-weight: 900;font-style: normal;}
+@font-face {font-family: 'Apfel Grotezk Brukt';src: url('/fonts/ApfelGrotezk-Brukt.woff2') format('woff2');font-weight: 400;font-style: normal;}
+html {
+  font-family: 'Apfel Grotezk', sans-serif;
   color: #000000;
-  }
-  a {
-    text-decoration: underline;
-    color: #0000EE;
-  }
-  .italic {
-    font-style: italic;
-  }
-  .bioContainer {
-    display: flex;
-  }
-  .bioImage {
-    margin: 20px;
-  }
-  .bioImage img {
-    display: block;
-    width: 3in;
-    height: 4.5in;
-  }
-  .bioImage p {
-    font-style: italic;
-    width: 30vh
-  }
+  height: 100%;
+}
+p {
+  font-family: 'Apfel Grotezk Brukt', 'Apfel Grotezk', sans-serif;
+}
+a {
+  font-family: 'Apfel Grotezk', sans-serif;
+  text-decoration: underline;
+  color: #0000EE;
+}
+.italic {
+  font-style: italic;
+}
+.bioContainer {
+  display: flex;
+}
+.bioImage {
+  margin: 20px;
+}
+.bioImage img {
+  display: block;
+  width: 3in;
+  height: 4.5in;
+}
+.bioImage p {
+  font-style: italic;
+  width: 30vh;
+}
+.printDisclaimer {
+  display: block;
+  font-style: italic;
+  position: fixed;
+  bottom: 0;
 }
