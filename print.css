@@ -31,10 +31,41 @@ a {
   height: 4.5in;
 }
 .bioImage p {
-  font-style: italic;
+  font-size: 16px;
   width: 30vh;
 }
 .printDisclaimer {
   display: block;
   font-style: italic;
+}
+.portHeader {
+  break-before: page;
+  page-break-before: always;
+}
+.portHeader h2 {
+  text-align: center;
+}
+.portOptions, .footerFace {
+  display: none;
+}
+.portTileWrapper {
+  display: block;
+}
+.portTile {
+  width: 3in;
+  height: auto;
+  margin: 0 .33in;
+  display: inline-block;
+  vertical-align: top;
+}
+.portTile img {
+  width: 100%;
+  height: auto;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.portTile h2 {
+  margin: 5px 0;
+  break-after: avoid;
+  page-break-after: avoid;
 }

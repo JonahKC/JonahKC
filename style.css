@@ -4,11 +4,14 @@
 @font-face {font-family: 'Apfel Grotezk';src: url('/fonts/ApfelGrotezk-Fett.woff2') format('woff2');font-weight: 700;font-style: normal;}
 @font-face {font-family: 'Apfel Grotezk';src: url('/fonts/ApfelGrotezk-Satt.woff2') format('woff2');font-weight: 900;font-style: normal;}
 @font-face {font-family: 'Apfel Grotezk Brukt';src: url('/fonts/ApfelGrotezk-Brukt.woff2') format('woff2');font-weight: 400;font-style: normal;}
+* {
+  box-sizing: border-box;
+}
 html {
-font-family: 'Apfel Grotezk', sans-serif;
+  font-family: 'Apfel Grotezk', sans-serif;
   background-color: #507D5A; /* old: 5f8867 */
   color: #fff8ed;
-  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   animation: fadeIn linear 2s;
@@ -24,101 +27,181 @@ p {
   line-height: 1.3;
 }
 img {
-  user-drag: none; 
   user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
   -webkit-user-select: none;
-  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
 }
 a {
   color: #fff8ed;
   text-decoration: none;
   transition: 0.2s;
-  border-bottom: 1.5px solid #fff8ed;
+  box-shadow:
+    inset 0 -1.5px 0 0 #507D5A,
+    inset 0 -3px 0 0 #fff8ed;
 }
 a:hover {
   cursor: pointer;
-  box-shadow: 0px 1.5px 0px 0px #fff8ed;
+  box-shadow:
+    inset 0 0px 0 0 #507D5A,
+    inset 0 -3px 0 0 #fff8ed;
+}
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
 }
 /* Inputs */
-input {
+input, button {
   margin: 5px;
-  border:1.5px #fff8ed solid;
+  border: 1.5px #fff8ed solid;
   border-radius: 0;
-  padding:8px;
-  background:#507D5A;
-  color:#fff8ed;
+  padding: 8px;
+  background: #507D5A;
+  color: #fff8ed;
+  font-family: inherit;
+  font-size: inherit;
 }
 input::placeholder {
-  color:#fff8ed;
+  color: #fff8ed;
 }
-input[type="button"], input[type="submit"] {
+input[type="button"], input[type="submit"], button {
   transition: all .2s ease-in-out;
   cursor: pointer;
 }
-input[type="button"]:hover, input[type="submit"]:hover {
+input[type="button"]:hover, input[type="submit"]:hover, button:hover {
   box-shadow: 0 0 0 1.5px #fff8ed;
 }
-input[type="button"]:active, input[type="submit"]:active {
+input[type="button"]:active, input[type="submit"]:active, button:active {
   box-shadow: 0 0 0 0px #fff8ed;
 }
-/* Placement */
-.flex {
+/* Homepage styles */
+.mainContainer {
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.center {
-  justify-content:center;
-  align-items:center;
-}
-.textcenter {
-  text-align:center;
-}
-/* Random styles and stuff */
-.bioContainer {
+.bioWrapper {
   width: 90vw;
-  padding-top: 20px;
+  max-width: 800px;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 0;
+}
+.bioContainer {
+  display: flex;
+  max-width: 800px;
 }
 .bioImage {
-  width: 29vw;
-  margin:0;
-  padding:0;
+  width: 30vw;
+  max-width: 300px;
+  margin: 0;
+  padding: 0;
 }
 .bioImage img {
-  width: 29vw;
+  width: 30vw;
+  max-width: 300px;
   height: auto;
 }
 .bioImage p {
   font-size: 16px;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 .italic {
   font-style: italic;
 }
 .bioText {
   width: 60vw;
-  height: auto;
-  padding: 0px 20px 20px 40px;
+  padding: 0 0 0 30px;
   box-sizing: border-box;
 }
-.hey {
-  font-size: 50px;
-  font-weight:700;
-  line-height:1;
-  margin:0;
+.portWrapper {
+  width: 90vw;
+  max-width: 800px;
 }
-.printDisclaimer {
-  display: none;
+.portHeader {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #507D5A;
+  border-bottom: 1.5px #fff8ed solid;
+}
+.portHeader h2 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+}
+.portOptions {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.portOptions > * {
+  margin: 0;
+}
+button.active {
+  background: #fff8ed;
+  color: #507D5A;
+  box-shadow: inset 0 0 0 1.5px #507D5A, inset 0 0 0 1.5px #fff8ed;
+}
+.portTileWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 15px 0 0 0;
+  gap: 15px;
+}
+.portTile {
+  border: #fff8ed 1.5px solid;
+  width: 100%;
+  padding: 15px;
+  gap: 15px;
+}
+.portTile img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.portTile h2 {
+  margin: 10px 0;
+}
+.portTile p {
+  margin: 0;
+}
+.footerFace {
+  margin: 20vh 0 20px 0;
+  cursor: help;
+  transition: .2s;
+  -webkit-touch-callout: default;
+}
+.footerFace:hover {
+  scale: 130%;
 }
 /* Mobile */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   .bioContainer {
     width: 100%;
+    margin: 0;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   .bioImage {
     margin: 0 20px;
     width: 33.333vh;
+    max-width: 90vw;
   }
   .bioImage img {
     width: 33.333vh;
@@ -129,17 +212,13 @@ input[type="button"]:active, input[type="submit"]:active {
   }
   .bioText {
     width: 100%;
-    height: auto;
-    padding: 20px;
+    padding: 20px 0 30px 0;
     box-sizing: border-box;
   }
-  .hey {
-    font-size: 40px;
-  }
-  .flex {
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  .portHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px 0;
   }
 }
 /* Accessibility */
@@ -162,4 +241,17 @@ input[type="button"]:active, input[type="submit"]:active {
 }
 ::-moz-selection {
   background: rgba(255, 248, 237,.2);
+}
+/* Print */
+.printDisclaimer {
+  display: none;
+}
+/* Stupid */
+.safariFix {
+  position: fixed;
+  top: 0;
+  background-color: #507D5A;
+  width:100%;
+  height:10px;
+  z-index:100;
 }
