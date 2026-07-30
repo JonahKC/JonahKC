@@ -1,0 +1,16 @@
+# From Claude
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VS Code (personal editor settings — remove this if you want to share workspace settings via git)
+.vscode/
+
+# Logs / temp files
+*.log
+*.tmp
+
+# Node (only relevant if you ever add build tooling)
+node_modules/
