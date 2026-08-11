@@ -9,8 +9,8 @@
     <link rel="canonical" href="https://jonahkc.com/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
-    <link href="print.css" media="print" rel="stylesheet" /> <!-- css for print -->
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
+    <link href="/print.css" media="print" rel="stylesheet" /> <!-- css for print -->
 
     <!-- Social Media Embeds -->
     <meta property="og:type" content="website">
@@ -27,7 +27,7 @@
     <meta property="twitter:description" content="I make videos and commit to bits.">
     <meta property="twitter:image" content="https://jonahkc.com/images/embed.png">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics --
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RDXQY8LX8X"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -39,11 +39,10 @@
     <!-- Dynamic photo caption -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        fetch("https://ipapi.co/json/")
+        fetch("/api/caption")
           .then(r => r.json())
           .then(data => {
-            console.log(`Hey there! Welcome to my website :)\nYou're near ${data.city}, ${data.region_code} — I use that info for a dynamic photo caption.`);
-            if (data.region_code === "WA") {
+            if (data.isWA) {
               document.getElementById("caption").textContent =
                   "Jonah Kessler-Cohen nonchalantly waiting for the light rail.";
             }
@@ -91,21 +90,21 @@
         <div class="bioContainer">
           
           <!-- The image side -->
-          <div class="bioImage">
+          <figure class="bioImage">
             <picture> <!-- Thank you Claude for this -->
               <source srcset="/images/portrait-small.webp 1x, /images/portrait.webp 2x, /images/portrait-large.webp 3x" media="(max-width: 800px)">
               <source srcset="/images/portrait-small.webp 1x, /images/portrait.webp 2x" media="(min-width: 801px)">
-              <img src="/images/portrait.webp" width="300" height="450" fetchpriority="high" alt="Jonah Kessler-Cohen nonchalantly waiting for the subway.">
+              <img src="/images/portrait.webp" width="300" height="450" fetchpriority="high" alt="Jonah Kessler-Cohen, in a navy suit, looks up from reading a newspaper">
             </picture>
-            <p class="italic" id="caption">Jonah Kessler-Cohen nonchalantly waiting for the subway.</p>
-          </div>
+            <figcaption class="italic" id="caption">Jonah Kessler-Cohen nonchalantly waiting for the subway.</figcaption>
+          </figure>
             
           <!-- The text side -->
           <div class="bioText">
             <h1>Hey, I'm Jonah!</h1>
-            <p>I just finished my freshman year at <a href="https://lmu.edu" target="_blank">Loyola Marymount University</a>, double majoring in Marketing and in Film and Television Production.</p>
-            <p>This summer I'm working at <a href="https://www.soundtransit.org" target="_blank">Sound Transit</a> as a video/photo intern.</p>
-            <p>Many of my projects lean toward satire, but I also do more serious film and social media work. You can view my full portfolio below!</p>
+            <p>I'm a sophomore at <a href="https://lmu.edu" target="_blank">Loyola Marymount University</a>, double majoring in Marketing and in Film and Television Production.</p>
+            <p>This past summer, I worked at <a href="https://www.soundtransit.org" target="_blank">Sound Transit</a> as a video/photo intern.</p>
+            <p>Many of my personal projects lean toward satire, but I also do more serious film and social media work. You can view my full portfolio below!</p>
             <h2>Want to get in touch?</h2>
             <p>Check out my <a href="https://www.linkedin.com/in/jonahkesslercohen/" target="_blank">LinkedIn</a>, DM me on <a href="https://www.instagram.com/jonahkesslercohen/" target="_blank">Instagram</a>, or <a href="mailto:jonah@jonahkc.com">send me an email</a>.</p>
             <p class="printDisclaimer">This website was printed using a lower-carbon-footprint font designed to reduce the amount of ink used in printing.</p>
@@ -114,7 +113,7 @@
       </div>
 
     <!-- Portfolio section -->
-      <div class="portWrapper"> 
+      <div class="portWrapper" id="portfolio"> 
         <!-- Portfolio header -->
         <div class="portHeader">  
           <h2>Portfolio</h2>
@@ -126,44 +125,48 @@
         </div>
 
         <!-- Portfolio tiles -->
-        <!-- 3:2 → width="667" height="445" 16:9 → width="667" height="375" 4:3 → width="667" height="500" -->
         <div class="portTileWrapper">
-          <div class="portTile" data-date="2025-06" data-rank="3">
+          <div class="portTile" data-date="2026-08" data-rank="1" id="sound-transit">
+            <img src="/images/portfolio/sound-transit.webp" srcset="/images/portfolio/sound-transit-small.webp 800w, /images/portfolio/sound-transit.webp 1600w" sizes="(max-width: 800px) 90vw, 800px" width="667" height="445" alt="Soccer fans pack a Sound Transit commuter rail platform before a Seattle World Cup match">
+            <h2>Sound Transit</h2>
+            <p>Worked as a video/photo intern. I filmed, photographed, and edited events and operations across the agency for internal and external use, including record-breaking ridership during the 2026 FIFA World Cup. <a href="/portfolio/sound-transit" target="_blank">View my work</a>.</p>
+          </div>
+          <div class="portTile" data-date="2025-06" data-rank="4" id="cheer">
             <img src="/images/portfolio/cheer.webp" srcset="/images/portfolio/cheer-small.webp 800w, /images/portfolio/cheer.webp 1600w" sizes="(max-width: 800px) 90vw, 800px" width="667" height="375" alt="Still from documentary, cheerleaders in red bows crowd together for a group selfie">
             <h2>Lincoln Cheer</h2>
-            <p>A docuseries following Lincoln High School's cheerleading team. As director, I coordinated a crew across two weeks of daily practices and an overnight trip to the state competition. As editor, I condensed 100+ hours of footage into 37 minutes. The trailer gained over 440K views on TikTok, and you can <a href="https://www.youtube.com/watch?v=_Y4-djfYv54&list=PLDPmDQKU3LUAW8Y28nw6cG_7TZ7_99eaW&index=1" target="_blank">view the series on YouTube</a>.</p>
+            <p>A docuseries following Lincoln High School's cheerleading team. As director, I coordinated a crew across two weeks of daily practices and an overnight trip to the state competition. As editor, I condensed 100+ hours of footage into 37 minutes. The trailer gained over 450K views on TikTok, and you can <a href="https://www.youtube.com/watch?v=_Y4-djfYv54&list=PLDPmDQKU3LUAW8Y28nw6cG_7TZ7_99eaW&index=1" target="_blank">view the series on YouTube</a>.</p>
           </div>
-          <div class="portTile" data-date="2024-10" data-rank="2" id="whales">
+          <div class="portTile" data-date="2024-10" data-rank="3" id="whales">
             <img src="/images/portfolio/whales.webp" srcset="/images/portfolio/whales-small.webp 800w, /images/portfolio/whales.webp 1600w" sizes="(max-width: 800px) 90vw, 800px" width="667" height="375" alt="Still from documentary, white house on a rocky shore with fog-covered forested hills beyond">
             <h2>Is there a whale season?</h2>
             <p>A short documentary looking for whales with my grandmother on Orcas Island, made as my college application video for LMU. <a href="https://youtu.be/3qHCwG9p4Vw" target="_blank">View on YouTube</a>.</p>
           </div>
-          <div class="portTile" data-date="2024-09" data-rank="1" id="tmobile">
+          <div class="portTile" data-date="2024-09" data-rank="2" id="tmobile">
             <img src="/images/portfolio/tmobile.webp" srcset="/images/portfolio/tmobile-small.webp 800w, /images/portfolio/tmobile.webp 1600w" sizes="(max-width: 800px) 90vw, 800px" width="667" height="445" alt="T-Mobile Club members and their mascot walk outside T-Mobile headquarters on a tour">
             <h2>T-Mobile Club</h2>
-            <p>Founded an appreciation club that grew from a joke into one of Lincoln High School's largest clubs. We hosted T-Mobile guest speakers, <a href="https://www.wuv.de/Themen/Marke/Wie-die-Telekom-aus-einem-Highschool-Club-eine-geniale-Werbeaktion-macht" target="_blank">collaborated with Deutsche Telekom</a> to produce content for their global social media accounts, made a <a href="https://youtu.be/8YlqmjaFrho" target="_blank">birthday video</a> played in front of 800 executives at Deutsche Telekom's annual leadership conference in Germany, and closed the year with a tour of T-Mobile HQ. <a href="https://instagram.com/tmobileclub" target="_blank">View on Instagram</a>.</p>
+            <p>Founded an appreciation club that grew from a joke into one of Lincoln High School's largest clubs. We hosted T-Mobile guest speakers, <a href="https://web.archive.org/web/20251111051726/https://www.wuv.de/Themen/Marke/Wie-die-Telekom-aus-einem-Highschool-Club-eine-geniale-Werbeaktion-macht" target="_blank">collaborated with Deutsche Telekom</a> to produce content for their global social media accounts, made a <a href="https://youtu.be/8YlqmjaFrho" target="_blank">birthday video</a> played in front of 800 executives at Deutsche Telekom's annual leadership conference in Germany, and closed the year with a tour of T-Mobile HQ. <a href="https://instagram.com/tmobileclub" target="_blank">View on Instagram</a>.</p>
           </div>
-          <div class="portTile" data-date="2024-04" data-rank="4">
+          <div class="portTile" data-date="2024-04" data-rank="5" id="culpepper">
             <img src="/images/portfolio/culpepper.webp" srcset="/images/portfolio/culpepper-small.webp 800w, /images/portfolio/culpepper.webp 1600w" sizes="(max-width: 800px) 90vw, 800px" width="667" height="500" alt="Screenshot grid of eight classroom Reels featuring Mr. Culpepper, several with over 1 million views">
             <h2>Mr. Culpepper Fan Account</h2>
             <p>Short videos of my AP Calculus teacher doing popular Gen Z Instagram trends. The <a href="https://www.instagram.com/mrculpepperfans/" target="_blank">account</a> gained over 10M views and 5.7K followers in just a few months before the school administration shut it down over liability concerns.</p>
           </div>
-          <div class="portTile" data-date="2024-03" data-rank="6">
+          <div class="portTile" data-date="2024-03" data-rank="7" id="skills">
             <img src="/images/portfolio/skills.webp" srcset="/images/portfolio/skills-small.webp 800w, /images/portfolio/skills.webp 1600w" sizes="(max-width: 800px) 90vw, 800px" width="667" height="375" alt="Still from video, student in protective gear welds in SkillsUSA competition, sparks flying">
             <h2>SkillsUSA Promo</h2>
             <p>An event recap video made with a team from Lincoln High School for <a href="https://skillsusawashington.org/" target="_blank">SkillsUSA</a>'s 3-day State Leadership and Skills Conference. I edited from 2pm to 2am to have it ready for the closing ceremony the next morning. It was shown to over 50 school districts across WA, ID, CA, and OR. <a href="https://youtu.be/A4uBAaVhFUM" target="_blank">View on YouTube</a>.</p>
           </div>
-          <div class="portTile" data-date="2024-01" data-rank="7">
+          <div class="portTile" data-date="2024-01" data-rank="8" id="mlk">
             <img src="/images/portfolio/mlk.webp" srcset="/images/portfolio/mlk-small.webp 800w, /images/portfolio/mlk.webp 1600w" sizes="(max-width: 800px) 90vw, 800px" width="667" height="375" alt="Still from video, student interview for MLK Assembly">
             <h2>2024 MLK Assembly</h2>
             <p>A collection of interviews discussing MLK's legacy and empowerment, made in collaboration with Lincoln High School's Black Student Union for their MLK Assembly. <a href="https://youtu.be/nw_DLCLsM3A" target="_blank">View on YouTube</a>.</p>
           </div>
-          <div class="portTile" data-date="2023-09" data-rank="5">
+          <div class="portTile" data-date="2023-09" data-rank="6" id="moosenotmeese">
             <img src="/images/portfolio/moosenotmeese.webp" srcset="/images/portfolio/moosenotmeese-small.webp 800w, /images/portfolio/moosenotmeese.webp 1600w" sizes="(max-width: 800px) 90vw, 800px" width="667" height="375" alt="Jonah Kessler-Cohen stands pensively in a forest, behind the scenes of a Moose Not Meese video">
             <h2>Moose Not Meese</h2>
             <p>A satirical grassroots movement advocating for the correct plural form of moose. I built a website, led protests, sold merch nationally, and grew its <a href="https://instagram.com/moosenotmeese" target="_blank">Instagram</a> to over 14K followers at its peak. In 2025, the organization underwent a values realignment, shifting from grammatical absolutism toward a broader message of love and unity. <a href="https://moosenotmeese.org/?utm_source=jonahkc.com" target="_blank">View the website</a>.</p>
           </div>
-          <div class="portTile" data-date="2023-04" data-rank="8">
+          <div class="portTile" data-date="2023-04" data-rank="9" id="stairs">
             <img src="/images/portfolio/stairs.webp" srcset="/images/portfolio/stairs-small.webp 800w, /images/portfolio/stairs.webp 1600w" sizes="(max-width: 800px) 90vw, 800px" width="667" height="375" alt="Still from documentary, close-up of the staircase railing's phallic-looking ironwork">
             <h2>The Anatomy of a Staircase</h2>
             <p>A documentary investigating why my high school's 107-year-old staircase banisters are undeniably phallic. It won the “People's Choice” and “Best Overall” awards at the Lincoln High School film festival. <a href="https://youtu.be/P1OB4vSIbE4" target="_blank">View on YouTube</a>.</p>
