@@ -195,6 +195,9 @@ button.active {
   scale: 130%;
 }
 /* Portfolio page styles */
+.subPortDescription p {
+  margin-bottom: 0;
+}
 .subPortWrapper {
   display: flex;
   flex-wrap: wrap;
