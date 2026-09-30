@@ -6,4 +6,4 @@ workers_dev = false
 [assets]
 directory = "./"
 binding = "ASSETS"
-exclude = ["worker.js", "wrangler.toml"]
+not_found_handling = "404-page"

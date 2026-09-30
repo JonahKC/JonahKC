@@ -1,0 +1,12 @@
+worker.js
+wrangler.toml
+.assetsignore
+.gitignore
+.git
+.DS_Store
+.AppleDouble
+.LSOverride
+.vscode
+*.log
+*.tmp
+node_modules
